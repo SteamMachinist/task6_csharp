@@ -35,3 +35,23 @@ D:\c# projects\task6_csharp\task6_csharp\obj\Debug\net7.0-windows\task6_csharp.D
 D:\c# projects\task6_csharp\task6_csharp\bin\Debug\net7.0-windows\task6_lib_csharp.dll
 D:\c# projects\task6_csharp\task6_csharp\bin\Debug\net7.0-windows\task6_lib_csharp.pdb
 D:\c# projects\task6_csharp\task6_csharp\obj\Debug\net7.0-windows\task6_csharp.csproj.CopyComplete
+C:\task6_csharp\task6_csharp\bin\Debug\net7.0-windows\task6_csharp.exe
+C:\task6_csharp\task6_csharp\bin\Debug\net7.0-windows\task6_csharp.deps.json
+C:\task6_csharp\task6_csharp\bin\Debug\net7.0-windows\task6_csharp.runtimeconfig.json
+C:\task6_csharp\task6_csharp\bin\Debug\net7.0-windows\task6_csharp.dll
+C:\task6_csharp\task6_csharp\bin\Debug\net7.0-windows\task6_csharp.pdb
+C:\task6_csharp\task6_csharp\bin\Debug\net7.0-windows\task6_lib_csharp.dll
+C:\task6_csharp\task6_csharp\bin\Debug\net7.0-windows\task6_lib_csharp.pdb
+C:\task6_csharp\task6_csharp\obj\Debug\net7.0-windows\task6_csharp.csproj.AssemblyReference.cache
+C:\task6_csharp\task6_csharp\obj\Debug\net7.0-windows\task6_csharp.DoctorAppForm.resources
+C:\task6_csharp\task6_csharp\obj\Debug\net7.0-windows\task6_csharp.csproj.GenerateResource.cache
+C:\task6_csharp\task6_csharp\obj\Debug\net7.0-windows\task6_csharp.GeneratedMSBuildEditorConfig.editorconfig
+C:\task6_csharp\task6_csharp\obj\Debug\net7.0-windows\task6_csharp.AssemblyInfoInputs.cache
+C:\task6_csharp\task6_csharp\obj\Debug\net7.0-windows\task6_csharp.AssemblyInfo.cs
+C:\task6_csharp\task6_csharp\obj\Debug\net7.0-windows\task6_csharp.csproj.CoreCompileInputs.cache
+C:\task6_csharp\task6_csharp\obj\Debug\net7.0-windows\task6_csharp.csproj.CopyComplete
+C:\task6_csharp\task6_csharp\obj\Debug\net7.0-windows\task6_csharp.dll
+C:\task6_csharp\task6_csharp\obj\Debug\net7.0-windows\refint\task6_csharp.dll
+C:\task6_csharp\task6_csharp\obj\Debug\net7.0-windows\task6_csharp.pdb
+C:\task6_csharp\task6_csharp\obj\Debug\net7.0-windows\task6_csharp.genruntimeconfig.cache
+C:\task6_csharp\task6_csharp\obj\Debug\net7.0-windows\ref\task6_csharp.dll

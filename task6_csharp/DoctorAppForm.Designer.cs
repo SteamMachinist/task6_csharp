@@ -28,7 +28,9 @@
             textBoxConsole = new TextBox();
             flowLayoutPanelConstructor = new FlowLayoutPanel();
             buttonCreateInstance = new Button();
-            flowLayoutPanelMethods = new FlowLayoutPanel();
+            flowLayoutPanelMethodParams = new FlowLayoutPanel();
+            comboBoxMethods = new ComboBox();
+            buttonCallMethod = new Button();
             SuspendLayout();
             // 
             // comboBoxTypes
@@ -72,19 +74,19 @@
             // 
             textBoxConsole.AcceptsReturn = true;
             textBoxConsole.AcceptsTab = true;
-            textBoxConsole.Location = new Point(639, 12);
+            textBoxConsole.Location = new Point(588, 12);
             textBoxConsole.Multiline = true;
             textBoxConsole.Name = "textBoxConsole";
             textBoxConsole.ReadOnly = true;
             textBoxConsole.ScrollBars = ScrollBars.Both;
-            textBoxConsole.Size = new Size(395, 543);
+            textBoxConsole.Size = new Size(446, 574);
             textBoxConsole.TabIndex = 4;
             // 
             // flowLayoutPanelConstructor
             // 
             flowLayoutPanelConstructor.Location = new Point(12, 136);
             flowLayoutPanelConstructor.Name = "flowLayoutPanelConstructor";
-            flowLayoutPanelConstructor.Size = new Size(621, 151);
+            flowLayoutPanelConstructor.Size = new Size(570, 151);
             flowLayoutPanelConstructor.TabIndex = 5;
             // 
             // buttonCreateInstance
@@ -97,19 +99,40 @@
             buttonCreateInstance.UseVisualStyleBackColor = true;
             buttonCreateInstance.Click += buttonCreateInstance_Click;
             // 
-            // flowLayoutPanelMethods
+            // flowLayoutPanelMethodParams
             // 
-            flowLayoutPanelMethods.Location = new Point(12, 322);
-            flowLayoutPanelMethods.Name = "flowLayoutPanelMethods";
-            flowLayoutPanelMethods.Size = new Size(621, 233);
-            flowLayoutPanelMethods.TabIndex = 7;
+            flowLayoutPanelMethodParams.Location = new Point(12, 377);
+            flowLayoutPanelMethodParams.Name = "flowLayoutPanelMethodParams";
+            flowLayoutPanelMethodParams.Size = new Size(570, 209);
+            flowLayoutPanelMethodParams.TabIndex = 7;
+            // 
+            // comboBoxMethods
+            // 
+            comboBoxMethods.FormattingEnabled = true;
+            comboBoxMethods.Location = new Point(12, 348);
+            comboBoxMethods.Name = "comboBoxMethods";
+            comboBoxMethods.Size = new Size(121, 23);
+            comboBoxMethods.TabIndex = 8;
+            comboBoxMethods.SelectedIndexChanged += comboBoxMethods_SelectedIndexChanged;
+            // 
+            // buttonCallMethod
+            // 
+            buttonCallMethod.Location = new Point(151, 347);
+            buttonCallMethod.Name = "buttonCallMethod";
+            buttonCallMethod.Size = new Size(75, 23);
+            buttonCallMethod.TabIndex = 9;
+            buttonCallMethod.Text = "Call";
+            buttonCallMethod.UseVisualStyleBackColor = true;
+            buttonCallMethod.Click += buttonCallMethod_Click;
             // 
             // DoctorAppForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1046, 567);
-            Controls.Add(flowLayoutPanelMethods);
+            ClientSize = new Size(1046, 598);
+            Controls.Add(buttonCallMethod);
+            Controls.Add(comboBoxMethods);
+            Controls.Add(flowLayoutPanelMethodParams);
             Controls.Add(buttonCreateInstance);
             Controls.Add(flowLayoutPanelConstructor);
             Controls.Add(textBoxConsole);
@@ -118,7 +141,7 @@
             Controls.Add(buttonSelectDLL);
             Controls.Add(comboBoxTypes);
             Name = "DoctorAppForm";
-            Text = "Form1";
+            Text = "DoctrorApp";
             ResumeLayout(false);
             PerformLayout();
         }
@@ -132,6 +155,8 @@
         private TextBox textBoxConsole;
         private FlowLayoutPanel flowLayoutPanelConstructor;
         private Button buttonCreateInstance;
-        private FlowLayoutPanel flowLayoutPanelMethods;
+        private FlowLayoutPanel flowLayoutPanelMethodParams;
+        private ComboBox comboBoxMethods;
+        private Button buttonCallMethod;
     }
 }

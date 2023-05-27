@@ -11,15 +11,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using task6_lib_csharp;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using TextBox = System.Windows.Forms.TextBox;
 
 namespace task6_csharp
 {
     public partial class DoctorAppForm : Form
     {
         private List<Type> types = new List<Type>();
-        private List<string> methods = new List<string>();
+        private List<MethodInfo> methods = new List<MethodInfo>();
 
         Type currentType;
+        MethodInfo currentMethod;
         object instance;
 
         public DoctorAppForm()
@@ -35,6 +38,13 @@ namespace task6_csharp
             flowLayoutPanelConstructor.Visible = false;
             buttonCreateInstance.Enabled = false;
             buttonCreateInstance.Visible = false;
+            comboBoxMethods.Enabled = false;
+            comboBoxMethods.Visible = false;
+            buttonCallMethod.Enabled = false;
+            buttonCallMethod.Visible = false;
+            flowLayoutPanelMethodParams.Enabled = false;
+            flowLayoutPanelMethodParams.Visible = false;
+            flowLayoutPanelMethodParams.FlowDirection = FlowDirection.TopDown;
         }
 
         private void buttonSelectDLL_Click(object sender, EventArgs e)
@@ -79,10 +89,10 @@ namespace task6_csharp
 
             currentType = types.Find((t) => t.Name == selected);
 
-            setupConstructorPanel();
+            updateConstructorPanel();
         }
 
-        private void setupConstructorPanel()
+        private void updateConstructorPanel()
         {
             labelSelectedType.Visible = true;
             labelSelectedType.Text = currentType.Name;
@@ -128,9 +138,9 @@ namespace task6_csharp
             ParameterInfo[] parametersInfo = ci.GetParameters();
 
             FlowLayoutPanel flowLayoutParams = (FlowLayoutPanel)flowLayoutPanelConstructor.Controls[1];
-            Control[] conctrolsArray = new Control[parametersInfo.Length];
-            flowLayoutParams.Controls.CopyTo(conctrolsArray, 0);
-            List<Control> controls = conctrolsArray.ToList();
+            Control[] controlsArray = new Control[parametersInfo.Length];
+            flowLayoutParams.Controls.CopyTo(controlsArray, 0);
+            List<Control> controls = controlsArray.ToList();
 
             List<Object> parameters = new List<Object>();
             foreach (var (control, paramInfo) in controls.Zip(parametersInfo))
@@ -141,26 +151,88 @@ namespace task6_csharp
                 parameters.Add(Convert.ChangeType(textBox.Text, paramInfo.ParameterType));
             }
             instance = Activator.CreateInstance(currentType, parameters.ToArray());
-            Console.WriteLine(instance.ToString());
+
             flowLayoutPanelConstructor.Enabled = false;
             buttonCreateInstance.Enabled = false;
 
-            setupMethodsPanel();
+            updateComboBoxMethods();
         }
 
-        private void setupMethodsPanel()
+        private void updateComboBoxMethods()
         {
             methods.Clear();
-            foreach (var method in currentType.GetMethods())
+            foreach (MethodInfo method in currentType.GetMethods())
             {
-                methods.Add(method.Name);
+                methods.Add(method);
             }
+            comboBoxMethods.Items.Clear();
+            comboBoxMethods.Enabled = true;
+            comboBoxMethods.Visible = true;
+            comboBoxMethods.ResetText();
+            comboBoxMethods.SelectedIndex = -1;
 
+            foreach (MethodInfo methodInfo in methods)
+            {
+                comboBoxMethods.Items.Add(methodInfo.Name);
+            }
         }
 
-        private void callMethod()
+        private void comboBoxMethods_SelectedIndexChanged(object sender, EventArgs e)
         {
+            string selected = comboBoxMethods.Text;
+            if (selected == "" || selected == null) return;
+            currentMethod = methods.Find((m) => m.Name == selected);
+            updateMethodPanel();
+        }
 
+        private void updateMethodPanel()
+        {
+            flowLayoutPanelMethodParams.Controls.Clear();
+            flowLayoutPanelMethodParams.Enabled = true;
+            flowLayoutPanelMethodParams.Visible = true;
+            var parameters = currentMethod.GetParameters();
+            foreach (ParameterInfo pi in parameters)
+            {
+                FlowLayoutPanel flowParam = new FlowLayoutPanel();
+                flowParam.FlowDirection = FlowDirection.LeftToRight;
+                flowParam.WrapContents = false;
+                flowParam.AutoSize = true;
+
+                Label label = new Label();
+                TextBox textBox = new TextBox();
+                textBox.Width = 200;
+                label.Height = textBox.Height + 8;
+                label.Width = (int)(textBox.Width / 1.5);
+                label.Text = pi.Name;
+
+                flowParam.Controls.Add(label);
+                flowParam.Controls.Add(textBox);
+                flowLayoutPanelMethodParams.Controls.Add(flowParam);
+            }
+            buttonCallMethod.Enabled = true;
+            buttonCallMethod.Visible = true;
+        }
+
+        private void buttonCallMethod_Click(object sender, EventArgs e)
+        {
+            var parameters = currentMethod.GetParameters();
+            Control[] paramPanels = new Control[parameters.Length];
+            flowLayoutPanelMethodParams.Controls.CopyTo(paramPanels, 0);
+
+            List<Object> parameterValues = new List<object>();
+            foreach (var (flowPanel, param) in paramPanels.Zip(parameters))
+            {
+                FlowLayoutPanel flowLayoutPanel = (FlowLayoutPanel)flowPanel;
+                TextBox textBox = (TextBox)flowLayoutPanel.Controls[1];
+                if (textBox == null || textBox.Text == "") return;
+                parameterValues.Add(Convert.ChangeType(textBox.Text, param.ParameterType));
+            }
+
+            Object returned = currentMethod.Invoke(instance, parameterValues.ToArray());
+            if (returned != null)
+            {
+                Console.WriteLine(returned.ToString());
+            }
         }
     }
 }

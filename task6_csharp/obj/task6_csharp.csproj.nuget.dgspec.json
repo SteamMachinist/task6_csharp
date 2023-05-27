@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\c# projects\\task6_csharp\\task6_csharp\\task6_csharp.csproj": {}
+    "C:\\task6_csharp\\task6_csharp\\task6_csharp.csproj": {}
   },
   "projects": {
-    "D:\\c# projects\\task6_csharp\\task6_csharp\\task6_csharp.csproj": {
+    "C:\\task6_csharp\\task6_csharp\\task6_csharp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\c# projects\\task6_csharp\\task6_csharp\\task6_csharp.csproj",
+        "projectUniqueName": "C:\\task6_csharp\\task6_csharp\\task6_csharp.csproj",
         "projectName": "task6_csharp",
-        "projectPath": "D:\\c# projects\\task6_csharp\\task6_csharp\\task6_csharp.csproj",
-        "packagesPath": "C:\\Users\\Yaroslav\\.nuget\\packages\\",
-        "outputPath": "D:\\c# projects\\task6_csharp\\task6_csharp\\obj\\",
+        "projectPath": "C:\\task6_csharp\\task6_csharp\\task6_csharp.csproj",
+        "packagesPath": "C:\\Users\\rando\\.nuget\\packages\\",
+        "outputPath": "C:\\task6_csharp\\task6_csharp\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Yaroslav\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\rando\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -62,7 +58,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }
