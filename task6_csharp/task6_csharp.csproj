@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="task6_lib_csharp\**" />
+    <EmbeddedResource Remove="task6_lib_csharp\**" />
+    <None Remove="task6_lib_csharp\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="task6_lib_csharp">
+      <HintPath>..\task6_lib_csharp\bin\Debug\net7.0\task6_lib_csharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
