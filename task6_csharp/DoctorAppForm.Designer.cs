@@ -28,7 +28,7 @@
             textBoxConsole = new TextBox();
             flowLayoutPanelConstructor = new FlowLayoutPanel();
             buttonCreateInstance = new Button();
-            flowLayoutPanel2 = new FlowLayoutPanel();
+            flowLayoutPanelMethods = new FlowLayoutPanel();
             SuspendLayout();
             // 
             // comboBoxTypes
@@ -97,19 +97,19 @@
             buttonCreateInstance.UseVisualStyleBackColor = true;
             buttonCreateInstance.Click += buttonCreateInstance_Click;
             // 
-            // flowLayoutPanel2
+            // flowLayoutPanelMethods
             // 
-            flowLayoutPanel2.Location = new Point(12, 322);
-            flowLayoutPanel2.Name = "flowLayoutPanel2";
-            flowLayoutPanel2.Size = new Size(621, 233);
-            flowLayoutPanel2.TabIndex = 7;
+            flowLayoutPanelMethods.Location = new Point(12, 322);
+            flowLayoutPanelMethods.Name = "flowLayoutPanelMethods";
+            flowLayoutPanelMethods.Size = new Size(621, 233);
+            flowLayoutPanelMethods.TabIndex = 7;
             // 
             // DoctorAppForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1046, 567);
-            Controls.Add(flowLayoutPanel2);
+            Controls.Add(flowLayoutPanelMethods);
             Controls.Add(buttonCreateInstance);
             Controls.Add(flowLayoutPanelConstructor);
             Controls.Add(textBoxConsole);
@@ -132,6 +132,6 @@
         private TextBox textBoxConsole;
         private FlowLayoutPanel flowLayoutPanelConstructor;
         private Button buttonCreateInstance;
-        private FlowLayoutPanel flowLayoutPanel2;
+        private FlowLayoutPanel flowLayoutPanelMethods;
     }
 }

@@ -144,15 +144,23 @@ namespace task6_csharp
             Console.WriteLine(instance.ToString());
             flowLayoutPanelConstructor.Enabled = false;
             buttonCreateInstance.Enabled = false;
+
+            setupMethodsPanel();
         }
 
-        private void setupMethods()
+        private void setupMethodsPanel()
         {
             methods.Clear();
             foreach (var method in currentType.GetMethods())
             {
                 methods.Add(method.Name);
             }
+
+        }
+
+        private void callMethod()
+        {
+
         }
     }
 }
